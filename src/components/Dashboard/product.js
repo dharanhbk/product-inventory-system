@@ -9,8 +9,8 @@ class Product extends React.Component{
         return(
             
             <div style={{marginLeft:"500px"}}>
-                
-                <table>
+                <button style={{marginLeft:"600px"}}><Link to ='/Edit'>Edit</Link></button>
+                {/* <table>
                   <tr>
                     <th>Image</th>
                     <th>Product name</th>
@@ -20,9 +20,9 @@ class Product extends React.Component{
                     <th>Category</th>
                     <th>Actions</th>
                     <br></br>
-            <button style={{marginLeft:"600px"}}><Link to ='/Edit'>Edit</Link></button>
+            
                   </tr>
-                </table>
+                </table> */}
 
             </div>
         );

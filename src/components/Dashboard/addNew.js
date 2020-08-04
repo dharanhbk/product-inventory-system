@@ -1,15 +1,15 @@
-import { Link } from "react-router-dom";
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-
-class Edit extends React.Component{
-    render(){
-        return(
+class Addnew extends React.Component {
+    
+    render() { 
+        return (
             <div className="loginForm">
         <form>
             <fieldset>
 
-                <h2 style={{textAlign: "center",fontFamily:" Georgia, 'Times New Roman', Times, serif",color:"rgb(80, 80, 116)"}}>Edit Product </h2>
+                <h2 style={{textAlign: "center",fontFamily:" Georgia, 'Times New Roman', Times, serif",color:"rgb(80, 80, 116)"}}>Add Product </h2>
                 <label >Product Name: </label>
                 <input type="text" />
                 <br></br>
@@ -32,15 +32,14 @@ class Edit extends React.Component{
                 <br></br>
                 
                 <button type="submit"  className="submit" style={{float:"left"}} >
-                    <Link to='/dashboard' style={{textDecoration:"none",color:"white"}}>Save Item</Link></button>
+                    <Link to='/dashboard' style={{textDecoration:"none",color:"white"}}>Add Item</Link></button>
                 <button type="submit"  className="submit" style={{float:" right", background:" red"}} >
-                <Link to='/dashboard' style={{textDecoration:"none",color:"white"}}>Delete Item</Link></button>
-
+                <Link to='/dashboard' style={{textDecoration:"none",color:"white"}}>Cancel</Link></button>
             </fieldset>
         </form>
-    </div>
-        );
+        </div>
+          );
     }
 }
-
-export default Edit;
+ 
+export default Addnew;

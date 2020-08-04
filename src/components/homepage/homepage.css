@@ -1,0 +1,37 @@
+.borderHead{ 
+    border: 1px solid black;
+    background:white;
+}
+.header{
+    color: rgb(30, 116, 48); 
+    font-size: 40px;
+    float: right;
+    margin-right: 80px;
+    margin-top: 20px;
+    font-style: italic;
+ }
+ 
+ .login{
+     float: right;
+     color: rgb(154, 79, 177); 
+     font-size: 30px;
+    margin-right: 80px;
+ }
+ .login:hover{
+     cursor: pointer;
+ }
+ 
+ .signup{
+     float: right;
+     color: rgb(5, 5, 143); 
+     font-size: 30px;
+     margin-right:150px ;
+ }
+ .signup:hover{
+     cursor: pointer;
+ }
+ .footerContent{
+    text-align: center;
+    margin-top: 100px;
+    font-size: 20px;
+}

@@ -6,6 +6,8 @@ import Footer from './homepage/footer';
 import SignUp from "./usercontrol/signUp";
 import DashBoard from "./Dashboard/dashboard";
 import Edit from "./Dashboard/edit";
+import Addnew from "./Dashboard/addNew";
+import TableEmp from "./Dashboard/table";
 
 
 
@@ -23,6 +25,8 @@ class RootComponent extends React.Component{
                 <Route exact path='/signup' component={SignUp}></Route> 
                 <Route exact path='/dashboard' component={DashBoard}></Route> 
                 <Route exact path='/edit' component={Edit}></Route> 
+                <Route exact path='/add-new' component={Addnew}></Route> 
+                <Route exact path='/table' component={TableEmp}></Route> 
                 </Switch> 
                
                 <Footer />
