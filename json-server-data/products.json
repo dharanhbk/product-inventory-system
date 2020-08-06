@@ -1,0 +1,18 @@
+{
+  "products": [
+    {
+      "product_name": "",
+      "id": 1,
+      "quantity": 0,
+      "category": "",
+      "price": ""
+    },
+    {
+      "product_name": "",
+      "id": 2,
+      "quantity": 0,
+      "category": "",
+      "price": ""
+    }
+  ]
+}

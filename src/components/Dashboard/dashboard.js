@@ -6,7 +6,7 @@ class DashBoard extends React.Component{
     render(){
         return(
             <div>
-            <h1 style={{textAlign:"center"}}> Product Inventory page</h1>
+            <h1 style={{marginTop:"50px"}}></h1>
             <NavBar />
             </div>
         );

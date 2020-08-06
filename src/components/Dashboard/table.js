@@ -46,7 +46,7 @@ class TableEmp extends React.Component {
         return (
                 this.state.employee.map(emp=>{
                     return (
-                            <tr>
+                            <tr key={emp.id}>
                             <td>{emp.id}</td>
                             <td>{emp.employee_name}</td>
                             <td>{emp.employee_salary}</td>

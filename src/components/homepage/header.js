@@ -10,7 +10,7 @@ class Header extends React.Component{
             <img src={logo} alt ="Logo" style={{marginLeft:"10px"}} />
             <p className="signup"><Link to="/signup" style={{textDecoration:"none"}}>Sign Up </Link></p>
             <p className="login"><Link to="/login" style={{textDecoration:"none"}}>Login </Link></p>
-            <p className="login"><Link to="/table" style={{textDecoration:"none"}}>Table </Link></p>
+            {/* <p className="login"><Link to="/table" style={{textDecoration:"none"}}>Table </Link></p> */}
             <p className="header">PRODUCT INVENTORY SYSTEM</p>
         </div>
         );

@@ -1,4 +1,5 @@
 import React from "react";
+import 'font-awesome/css/font-awesome.min.css';
 
 
 class Footer extends React.Component{
@@ -10,10 +11,10 @@ class Footer extends React.Component{
                 <hr></hr>
                 <footer className="footerContent">
             Connect with us on &nbsp;
-            <i className="fa fa-facebook-f" style={{fontSize:"24px",color:"darkblue"}}></i> &nbsp;/ &nbsp;
-            <i className="fa fa-linkedin" style={{fontSize:"24px",color:"rgb(100, 100, 202)"}}></i>&nbsp; /&nbsp;
-            <i className="fa fa-instagram" style={{fontSize:"24px",color:"rgb(150, 11, 34)"}}></i>&nbsp; /&nbsp;
-            <i className="fa fa-pinterest-square" style={{fontSize:"24px",color:"rgb(231, 16, 52)"}}></i>
+            <i className="fa fa-facebook-f" ></i> &nbsp;/ &nbsp;
+            <i className="fa fa-linkedin" ></i>&nbsp; /&nbsp;
+            <i className="fa fa-instagram" ></i>&nbsp; /&nbsp;
+            <i className="fa fa-pinterest-square" ></i>
             &nbsp;
             &nbsp; &emsp; &emsp;
             For any queries Dial--  1800-123-333 (toll-free number)
