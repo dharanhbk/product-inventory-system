@@ -1,8 +1,10 @@
 import React from 'react';
-
+import { withRouter, Link } from "react-router-dom"
 import axios from "axios";
 import './table.css'
 import ProductTable from './productTable';
+import Cards from './cards';
+import { Navbar, Nav } from 'react-bootstrap';
 
 
 class Product extends React.Component {
@@ -11,8 +13,10 @@ class Product extends React.Component {
         super(props);
         this.state ={
             products:[],
+            productsearch:[],
             deleteSuccess:false,
-            productId:1
+            productId:1,
+            searchValue:""
         };
     }
 
@@ -38,6 +42,7 @@ class Product extends React.Component {
                 console.log(response.data)
 
                 this.setState({products: response.data})
+                this.setState({productsearch: response.data})
 
                 console.log(this.state.products)
 
@@ -62,12 +67,27 @@ class Product extends React.Component {
 
     editProductWithId=(editId)=>{
       console.log(editId);
-     this.setState({productId:parseInt(editId)})
+     this.setState({productId: editId})
       console.log(this.state.productId)
-    //   this.props.history.push({
-    //     pathname: '/edit', 
-    //     state: {productId: editId}
-    // })
+      this.props.history.push({
+        pathname: '/edit', 
+        state: {productId:editId}
+    })
+    }
+
+    getSearch=(event)=>{
+                        
+        let searchV = event.target.value
+        if(searchV==''){
+            this.getBlogs()
+        }
+        this.setState({searchValue: searchV})
+        console.log(searchV);
+        let searchF = this.state.productsearch.filter(f=>{
+                                return f.category.toLowerCase().match(searchV.toLowerCase().trim())
+                            })
+        console.log(searchF);    
+        this.setState({products: searchF}) 
     }
 
 
@@ -87,7 +107,8 @@ class Product extends React.Component {
                             // </tr>    
                           <ProductTable 
                           key={product.id} id ={product.id} name={product.product_name} quantity={product.quantity} price ={product.price}
-                          category ={product.category} deleteId={this.deleteProductWithId} editId={this.editProductWithId}
+                          category ={product.category} prodImage={product.productimage}
+                          deleteId={this.deleteProductWithId} editId={this.editProductWithId}
                           />
                             
                          )
@@ -95,15 +116,48 @@ class Product extends React.Component {
                 )
     }
 
+
+    renderCard=()=>{
+        console.log(this.state.products);
+        return (
+                this.state.products.map(product=>{
+                    return (
+                        <Cards 
+                        key={product.id} id ={product.id} name={product.product_name} quantity={product.quantity} price ={product.price}
+                        category ={product.category} prodImage={product.productimage}
+                        deleteId={this.deleteProductWithId} editId={this.editProductWithId}
+                        />)
+                    })
+        )
+    }
+
+
+
    
         
         render() { 
         return (
             <div>
+                <div className="dashBoard">
+                <span style={{fontSize: "25px",color: "rgb(182, 133, 41)",marginLeft:"20px"}}>Search :</span>
+                <input type="text" placeholder="Search by category" name="search" onChange={this.getSearch} style={{fontSize: "25px "}} />
+               
+
+                {/* <i className="fa fa-filter" style={{fontSize: "30px ",marginLeft: "100px"}}  > Filter Product</i> */}
+                <Link to="/dashboard" style={{padding:"50px"}}>Dashboard</Link>
+                <Link to="/stockdetails" style={{padding:"50px"}}>Stock Details</Link>
+
+               <Link to="/add-new"><button type="button"  style={{marginLeft: "100px"}}>Add new item </button></Link>
+               <Link to="/add-new-category"><button type="button"  style={{marginLeft: "100px"}}>Add new Category </button></Link>
+                {/* <button type="button" style={{marginLeft: "50px"}}>Add new Category</button> */}
+    
+            </div>
                 <br></br>
-                <table border="1">
+                <br></br>
+                {/* <table border="1">
                 <thead>
                 <tr>
+                    <th>Product Image</th>
                     <th>Product Id</th>
                     <th>Product Name</th>
                     <th>Quantity</th>
@@ -115,11 +169,14 @@ class Product extends React.Component {
                 <tbody>
                 {this.renderTable()}
                 </tbody>
-                </table>
+                </table> */}
+                <div className="row">
+                    {this.renderCard()}
+                </div>
                 
             </div>
           );
     }
 }
  
-export default Product;
+export default withRouter(Product);

@@ -9,4 +9,21 @@ table {
     text-align: left;
     padding: 8px;
   }
+  .AddItemForm{
+    max-width: 500px;
+    /* text-align: center; */
+    font-size: 15px;
+    margin-left: 550px;
+    background:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+.editForm{
+  max-width: 500px;
+  /* text-align: center; */
+  font-size: 15px;
+  margin-left: 550px;
+  background:white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
+}

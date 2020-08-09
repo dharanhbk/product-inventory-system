@@ -8,6 +8,8 @@ import DashBoard from "./Dashboard/dashboard";
 import Edit from "./Dashboard/edit";
 import Addnew from "./Dashboard/addNew";
 import TableEmp from "./Dashboard/table";
+import Stock from "./Dashboard/stock";
+import NewCategory from "./Dashboard/newCategory";
 
 
 
@@ -16,9 +18,9 @@ class RootComponent extends React.Component{
     render(){
 
         return (
-            <div>
+            <div >
                 
-                <Header />
+                {/* <Header /> */}
                 <Switch>
                 <Route exact path='/' component={HomePage}></Route> 
                 <Route exact path='/login' component={HomePage}></Route> 
@@ -27,6 +29,8 @@ class RootComponent extends React.Component{
                 <Route exact path='/edit' component={Edit}></Route> 
                 <Route exact path='/add-new' component={Addnew}></Route> 
                 <Route exact path='/table' component={TableEmp}></Route> 
+                <Route exact path='/stockdetails' component={Stock}></Route> 
+                <Route exact path='/add-new-category' component={NewCategory}></Route> 
                 </Switch> 
                
                 <Footer />

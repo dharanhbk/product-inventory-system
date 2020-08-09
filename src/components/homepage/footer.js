@@ -8,7 +8,7 @@ class Footer extends React.Component{
             <div>
                 <br></br>
                 <br></br>
-                <hr></hr>
+                
                 <footer className="footerContent">
             Connect with us on &nbsp;
             <i className="fa fa-facebook-f" ></i> &nbsp;/ &nbsp;
