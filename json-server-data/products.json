@@ -37,10 +37,7 @@
       "category": "Mobiles",
       "price": "150",
       "productimage": "product4.png",
-      "chart": {
-        "product-name": "iPhone",
-        "quantity": "15"
-      }
+      "chart": {}
     }
   ],
   "addcategory": [

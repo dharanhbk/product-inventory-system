@@ -84,7 +84,7 @@ class Product extends React.Component {
         this.setState({searchValue: searchV})
         console.log(searchV);
         let searchF = this.state.productsearch.filter(f=>{
-                                return f.category.toLowerCase().match(searchV.toLowerCase().trim())
+                                return f.product_name.toLowerCase().match(searchV.toLowerCase().trim())
                             })
         console.log(searchF);    
         this.setState({products: searchF}) 
@@ -140,12 +140,12 @@ class Product extends React.Component {
             <div>
                 <div className="dashBoard">
                 <span style={{fontSize: "25px",color: "rgb(182, 133, 41)",marginLeft:"20px"}}>Search :</span>
-                <input type="text" placeholder="Search by category" name="search" onChange={this.getSearch} style={{fontSize: "25px "}} />
+                <input type="text" placeholder="Search for product name" name="search" onChange={this.getSearch} style={{fontSize: "25px "}} />
                
 
                 {/* <i className="fa fa-filter" style={{fontSize: "30px ",marginLeft: "100px"}}  > Filter Product</i> */}
-                <Link to="/dashboard" style={{padding:"50px"}}>Dashboard</Link>
-                <Link to="/stockdetails" style={{padding:"50px"}}>Stock Details</Link>
+                <Link to="/dashboard" style={{padding:"50px",textDecoration:"none"}}>Dashboard</Link>
+                <Link to="/stockdetails" style={{padding:"50px",textDecoration:"none"}}>Stock Details</Link>
 
                <Link to="/add-new"><button type="button"  style={{marginLeft: "100px"}}>Add new item </button></Link>
                <Link to="/add-new-category"><button type="button"  style={{marginLeft: "100px"}}>Add new Category </button></Link>

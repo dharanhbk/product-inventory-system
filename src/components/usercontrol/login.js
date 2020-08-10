@@ -58,7 +58,8 @@ class Login extends React.Component{
                 <br></br>
                 <button type="submit" onClick={this.login}  className="submit">Login</button>
                 <br></br>
-                <span style={{fontSize: "17px"}}>First time user? </span><span style={{fontSize: "17px", textDecoration: "underline" }}>Create an account</span>
+                <span style={{fontSize: "17px"}}>First time user? </span><span style={{fontSize: "17px", textDecoration: "underline" }}>
+                    <Link to="/signup">Create an account</Link></span>
 
             </fieldset>
         </form>

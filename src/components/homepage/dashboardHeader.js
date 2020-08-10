@@ -14,7 +14,7 @@ class DashboardHeader extends React.Component{
             <div className="borderHead" style={{marginTop:"-40px"}}>
             <img src={logo} alt ="Logo" className="logo" />
             <p className="signup"><Link to="/login" style={{textDecoration:"none"}}>Logout</Link></p>
-            <p className="login"><Link to="/stockdetails" style={{textDecoration:"none"}}>Profile </Link></p>
+            <p className="login"><Link to="/dashboard" style={{textDecoration:"none"}}>Home </Link></p>
             {/* <p className="login"><Link to="/table" style={{textDecoration:"none"}}>Table </Link></p> */}
             <p className="header">PRODUCT INVENTORY SYSTEM</p>
         </div>

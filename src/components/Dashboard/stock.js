@@ -50,6 +50,8 @@ class Stock extends React.Component{
                 <br></br>
                 <br></br>
                 <DashboardHeader ></DashboardHeader> 
+                <br></br>
+                <br></br>
                 <Link to="/dashboard"> <span style={{marginTop:"100px"}}> Back to Dashboard </span></Link>
 
                 <Chart

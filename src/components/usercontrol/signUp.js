@@ -118,7 +118,8 @@ class SignUp extends React.Component{
                     <br></br>
                     <button type="submit"  className="submit"  onClick={this.btnstatus}>SignUp</button>
                     <br></br>
-                    <span style={{fontSize:"17px"}}>Already have an account? </span><span style={{fontSize: "17px", textDecoration:" underline"}} >Login</span>
+                    <span style={{fontSize:"17px"}}>Already have an account? </span>
+                    <span style={{fontSize: "17px", textDecoration:" underline"}} ><Link to="/login">Login</Link></span>
     
                 </fieldset>
             </form>
