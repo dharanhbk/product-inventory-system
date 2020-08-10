@@ -129,30 +129,31 @@ class AddNew extends React.Component{
             <fieldset>
 
                 <h2 style={{textAlign: "center",fontFamily:" Georgia, 'Times New Roman', Times, serif",color:"rgb(80, 80, 116)"}}>Add Product </h2>
-                <label >Product Name: </label>
-                <input type="text"    onChange={this.getName}/ >&nbsp;{this.state.nameError}
+                <label >Product Name: </label><span style={{color:"red",fontSize:"12px"}}>{this.state.nameError}<br></br></span>
+                <input type="text"    onChange={this.getName}/ >&nbsp;
                 <br></br>
                 <br></br>
-                <label >Product Id: </label>
-                <input type="text" onChange={this.getId}/>&nbsp;{this.state.idError}
+                <label >Product Id: </label><span style={{color:"red",fontSize:"12px"}}>{this.state.idError}<br></br></span>
+                <input type="text" onChange={this.getId}/>&nbsp;
                 <br></br>
                 <br></br>
-                <label >Qty in stock:&nbsp;</label>
+                <label >Qty in stock:&nbsp;</label><br></br>
                 <input type="number" onChange={this.getQty} defaultValue="1" />&nbsp;
                 <br></br>
                 <br></br>
-                <label style={{marginLeft:"-10pxpx"}} > Category :&nbsp;</label>
+                <label style={{marginLeft:"-10pxpx"}} > Category :&nbsp;</label><br></br>
                 <select name="list" id="list" onChange={this.getCategory} >
                     {this.state.allCty.map(cty=><option key={cty.id} value={cty.category}>{cty.category}</option>)}
                 </select>
                 <br></br>
                 <br></br>
-                <label > Price in $ :&nbsp;</label>
+                <label > Price in $ :&nbsp;</label><br></br>
                 <input type="number" onChange={this.getPrice} defaultValue="0"/>
                 <br></br>
                 <br></br>
                 <span style={{display:"inline"}}> 
-                    <label>Image: </label><input type="file" onChange={this.getImage} multiple accept='image/*' />{this.state.productimagError}
+                    <label>Image: </label><input type="file" onChange={this.getImage} multiple accept='image/*' />
+                    <span style={{color:"red",fontSize:"12px"}}>{this.state.productimagError}</span>
                 </span> 
                 <br></br>
                      

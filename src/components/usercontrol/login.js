@@ -44,11 +44,11 @@ class Login extends React.Component{
             <fieldset>
 
                 <h2 style={{textAlign: "center",fontFamily:" Georgia, 'Times New Roman', Times, serif",color:"rgb(80, 80, 116)"}}>Login </h2>
-                <label >E-Mail ID:&nbsp;</label>
+                <label >E-Mail ID:&nbsp;</label><br></br>
                 <input type="text" onChange={this.getEmail}/>
                 <br></br>
                 <br></br>
-                <label >Password:&nbsp;</label>
+                <label >Password:&nbsp;</label><br></br>
                 <input type="password" onChange={this.getPassword}/>
                 <br></br>
                 <br></br>

@@ -101,19 +101,18 @@ class SignUp extends React.Component{
                 <fieldset>
     
                     <h2 style={{textAlign:" center",fontFamily: "Georgia, 'Times New Roman', Times, serif",color:"rgb(80, 80, 116)"}}>Sign Up </h2>
-                    <label >Full Name: </label>
+                    <label >Name: </label> <span style={{color:"red",fontSize:"12px"}}>{this.state.nameError}</span><br></br>
                     <input type="text" onChange={this.getName} />&nbsp;
-                    <span style={{color:"red",fontSize:"12px"}}>{this.state.nameError}</span>
                     <br></br>
                     <br></br>
-                    <label >E-mail: </label>
+                    <label >E-mail: </label><span style={{color:"red",fontSize:"12px"}}>{this.state.emailError}</span><br></br>
                     <input type="text"  onChange={this.getEmail}/>&nbsp;
-                    <span style={{color:"red",fontSize:"12px"}}>{this.state.emailError}</span>
+                    
                     <br></br>
                     <br></br>
-                    <label >Password:&nbsp;</label>
-                    <input type="password" onChange={this.getPassword} />&nbsp;
-                    <span style={{color:"red",fontSize:"12px"}}>{this.state.passwordError}</span>
+                    <label >Password:&nbsp;</label><span style={{color:"red",fontSize:"12px"}}>{this.state.passwordError}</span><br></br>
+                    <input type="password" onChange={this.getPassword}  />&nbsp;
+                    
                     <br></br>
                     <br></br>
                     <button type="submit"  className="submit"  onClick={this.btnstatus}>SignUp</button>

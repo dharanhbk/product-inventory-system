@@ -20,7 +20,10 @@ class Stock extends React.Component{
        
         this.getblogs()
         
-        
+    }
+
+    componentDidMount(){
+        this.getblogs()
     }
     getblogs=()=>{
         Axios.get('http://localhost:3000/products')
