@@ -15,7 +15,7 @@ class SignUp extends React.Component{
             password:'',
             nameError:'*Must contain min 4 characters',
             emailError:'*Enter valid email id',
-            passwordError:'*Must contain min 8 characters'
+            passwordError:'*Must contain min 5 characters'
                 }
     }
     checkNameValidation=()=>{

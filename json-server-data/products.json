@@ -38,6 +38,18 @@
       "price": "150",
       "productimage": "product4.png",
       "chart": {}
+    },
+    {
+      "product_name": "Shirt",
+      "id": "5",
+      "quantity": 1,
+      "category": "Cosmetics",
+      "price": "10",
+      "productimage": "product3.png",
+      "chart": {
+        "product-name": "Shirt",
+        "quantity": 1
+      }
     }
   ],
   "addcategory": [
@@ -128,6 +140,12 @@
       "email": "kmdharan@gmail.com",
       "password": "123456789",
       "id": 7
+    },
+    {
+      "name": "Admin",
+      "email": "admin@gmail.com",
+      "password": "12345",
+      "id": 8
     }
   ]
 }
