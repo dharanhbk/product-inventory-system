@@ -27,17 +27,4 @@ table {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
 }
-.button1{
-  background-color: rgb(73, 153, 219);
-  color: white;
-  padding: 10px 32px;
-  font-size: 16px;
-  margin: 4px 2px;
-}
-.button2{
-  background-color: rgb(35, 211, 29);
-  color: white;
-  padding: 10px 32px;
-  font-size: 16px;
-  margin: 4px 2px;
-}
+

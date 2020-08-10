@@ -29,18 +29,6 @@
       "price": "20",
       "productimage": "product7.png",
       "chart": {}
-    },
-    {
-      "product_name": "Shoes",
-      "id": "445",
-      "quantity": 1,
-      "category": "Slippers",
-      "price": "2",
-      "productimage": "product1.png",
-      "chart": {
-        "product-name": "Shoes",
-        "quantity": 1
-      }
     }
   ],
   "addcategory": [
