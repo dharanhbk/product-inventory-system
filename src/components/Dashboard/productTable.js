@@ -26,8 +26,8 @@ constructor(props){
                  <td>{this.props.quantity}</td>
                  <td>{this.props.price}</td>
                  <td>{this.props.category}</td>
-                 <td style={{textAlign:"center"}}><button onClick={this.editProduct}>Edit</button></td>
-                 <td style={{textAlign:"center"}} ><button onClick={this.deleteProduct}>Delete</button></td> 
+                 <td style={{textAlign:"center"}}><button onClick={this.editProduct} className="button3">Edit</button></td>
+                 <td style={{textAlign:"center"}} ><button onClick={this.deleteProduct} className="button4">Delete</button></td> 
             </tr>
           );
     }

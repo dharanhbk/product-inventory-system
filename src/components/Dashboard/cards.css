@@ -35,7 +35,7 @@
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
-    background-color: #f1f1f1;
+    background-color: #8deee9;
   }
   @media screen and (max-width: 1200px) {
     .card {
@@ -44,4 +44,16 @@
         text-align: center;
         background-color: #f1f1f1;
     }
+  }
+
+  .button3{
+    background-color: rgb(35, 211, 29);
+    color: white;
+    padding: 5px;
+}
+.button4{
+    background-color: crimson;
+    color: white;
+    padding: 5px;
+    
   }

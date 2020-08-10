@@ -31,23 +31,14 @@
       "chart": {}
     },
     {
-      "product_name": "iPhone",
-      "id": "78",
-      "quantity": "15",
-      "category": "Mobiles",
-      "price": "150",
-      "productimage": "product4.png",
-      "chart": {}
-    },
-    {
-      "product_name": "Shirt",
-      "id": "5",
+      "product_name": "Shoes",
+      "id": "445",
       "quantity": 1,
-      "category": "Cosmetics",
-      "price": "10",
-      "productimage": "product3.png",
+      "category": "Slippers",
+      "price": "2",
+      "productimage": "product1.png",
       "chart": {
-        "product-name": "Shirt",
+        "product-name": "Shoes",
         "quantity": 1
       }
     }
