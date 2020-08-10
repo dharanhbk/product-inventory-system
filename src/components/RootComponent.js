@@ -33,7 +33,7 @@ class RootComponent extends React.Component{
                 <Route exact path='/add-new-category' component={NewCategory}></Route> 
                 </Switch> 
                
-                <Footer />
+                {/* <Footer /> */}
             </div>
         )
     }
