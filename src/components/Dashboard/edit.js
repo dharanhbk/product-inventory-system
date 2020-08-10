@@ -122,7 +122,7 @@ class Edit extends React.Component{
                 <br></br>
                 <br></br>
                 <label > Category :&nbsp;</label>
-                <input type="text" value={this.state.category} onChange={this.editCategory}></input>
+                <input type="text" value={this.state.category} onChange={this.editCategory} readOnly></input>
                 <br></br>
                 <br></br>
                 <label > Price in $ :&nbsp;</label>
