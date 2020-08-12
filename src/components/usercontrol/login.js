@@ -19,8 +19,11 @@ class Login extends React.Component{
          const data= await Axios.get('http://localhost:3000/register?email='+ this.state.email);
          console.log(data);
           if(data.data.length !== 0){
-             if(this.state.password === data.data[0].password){
+             if(this.state.password == data.data[0].password){
                 this.props.history.push("/dashboard")
+             }
+             else{
+                 alert("invalid password")
              }
              }
              else{
@@ -40,17 +43,17 @@ class Login extends React.Component{
         return(
             
     <div className="loginForm">
-        <form>
+        <form >
             <fieldset>
 
                 <h2 style={{textAlign: "center",fontFamily:" Georgia, 'Times New Roman', Times, serif",color:"rgb(80, 80, 116)"}}>Login </h2>
                 <label >E-Mail ID:&nbsp;</label><br></br>
                 <input type="text" onChange={this.getEmail}/>
-                <br></br>
+                
                 <br></br>
                 <label >Password:&nbsp;</label><br></br>
                 <input type="password" onChange={this.getPassword}/>
-                <br></br>
+                
                 <br></br>
                 <input type="checkbox"  /> Remember me &nbsp; 
                 <span style={{fontSize:"15px"}} >Forget password?</span>  

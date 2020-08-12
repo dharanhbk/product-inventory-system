@@ -108,32 +108,31 @@ class Edit extends React.Component{
             <fieldset>
 
                 <h2 style={{textAlign: "center",fontFamily:" Georgia, 'Times New Roman', Times, serif",color:"rgb(80, 80, 116)"}}>Edit Product </h2>
-                <label >Product Name: </label>
+                <label >Product Name: </label><span style={{fontSize:"15px",color:"red"}}>{this.state.nameError}</span><br></br>
                 <input type="text" value={this.state.name} onChange={this.editName}/>
-                <span style={{fontSize:"15px"}}>{this.state.nameError}</span>
                 <br></br>
                 <br></br>
-                <label >Product Id:  </label>
+                <label >Product Id:  </label><br></br>
                 <input type="text" value={this.state.id} onChange={this.editid} />
                 <br></br>
                 <br></br>
-                <label >Qty in stock:&nbsp;</label>
-                <input type="number" value={this.state.qty} onChange={this.editQty}/>
+                <label >Quantity:&nbsp;</label><br></br>
+                <input type="number" value={this.state.qty} min="0" onChange={this.editQty}/>
                 <br></br>
                 <br></br>
-                <label > Category :&nbsp;</label>
+                <label > Category :&nbsp;</label><br></br>
                 <input type="text" value={this.state.category} onChange={this.editCategory} readOnly></input>
                 <br></br>
                 <br></br>
-                <label > Price in $ :&nbsp;</label>
-                <input type="number" value={this.state.price} onChange={this.editPrice} />
+                <label > Price in $ :&nbsp;</label><br></br>
+                <input type="number" value={this.state.price} min="0" onChange={this.editPrice} />
                 <br></br>
                 <br></br>
                 
                <Link to="/dashboard">
-                   <button type="submit"  className="submit" style={{float:"left"}} onClick={this.editProduct} disabled={this.state.buttonStatus}>Save Item</button>
+                   <button type="submit"  className="button3" style={{float:"left"}} onClick={this.editProduct} disabled={this.state.buttonStatus}>Save Item</button>
                </Link> 
-                <button type="submit"  className="submit" style={{float:" right", background:" red"}} >
+                <button type="submit"  className="button4" style={{float:" right", background:" red"}} >
                 <Link to='/dashboard' style={{textDecoration:"none",color:"white"}}>Cancel</Link></button>
 
             </fieldset>

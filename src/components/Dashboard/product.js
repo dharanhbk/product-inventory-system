@@ -138,20 +138,32 @@ class Product extends React.Component {
         render() { 
         return (
             <div>
-                <div className="dashBoard">
-                <span style={{fontSize: "25px",color: "rgb(182, 133, 41)",marginLeft:"90px"}}>Search :</span>
-                <input type="text" placeholder="Search for product name" name="search" onChange={this.getSearch} style={{fontSize: "25px "}} />
-               
-
-                {/* <i className="fa fa-filter" style={{fontSize: "30px ",marginLeft: "100px"}}  > Filter Product</i> */}
-                <Link to="/dashboard" style={{padding:"50px",textDecoration:"none",color:"brown"}}>Dashboard</Link>
+                {/* <div className="dashBoard">
+                <span>
+                <label>Search: </label>
+                <input type="text" placeholder="Search for product name" name="search" onChange={this.getSearch} />
+                </span>
+               <span>
+               <Link to="/dashboard" style={{padding:"50px",textDecoration:"none",color:"brown"}}>Dashboard</Link>
+               </span>
+                <span>
                 <Link to="/stockdetails" style={{padding:"50px",textDecoration:"none",color:"brown"}}>Stock Details</Link>
+                </span>
+                <span>
+                <Link to="/add-new"><button type="button" className="button1"  style={{marginLeft: "100px"}}>Add new item </button></Link>
+                </span>
+                <span>
+                <Link to="/add-new-category"><button type="button" className="button2"  style={{marginLeft: "100px"}}>Add new Category </button></Link>
+                </span>
+                </div> */}
+                <div className="topnav">
+                <Link to="/dashboard"> Dashboard</Link>
+                <Link to="/stockdetails" >Stock Details</Link>
+                <Link to="/add-new">Add new item </Link>
+                <Link to="/add-new-category">Add new Category</Link>
+                <input type="text" placeholder="Search for product name" name="search" onChange={this.getSearch} />
+                </div>
 
-               <Link to="/add-new"><button type="button" className="button1"  style={{marginLeft: "100px"}}>Add new item </button></Link>
-               <Link to="/add-new-category"><button type="button" className="button2"  style={{marginLeft: "100px"}}>Add new Category </button></Link>
-                {/* <button type="button" style={{marginLeft: "50px"}}>Add new Category</button> */}
-    
-            </div>
                 <br></br>
                 <br></br>
                 {/* <table border="1">

@@ -1,15 +1,48 @@
-
+body{
+   background-image: url("../images/blured4.jpg");
+   
+}
 .loginForm{
     max-width: 350px;
     /* text-align: center; */
+    background: white;
     font-size: 20px;
     margin-left: 550px;
-    background:white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
 }
+.loginForm input[type=text],input[type=password], select {
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .signupForm input[type=text],input[type=password], select {
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
 .signupForm{
-    max-width: 300px;
+    max-width: 350px;
     /* text-align: center; */
     font-size: 20px;
     margin-left: 550px;
@@ -17,11 +50,11 @@
     background:white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-@media screen and (max-width: 1450px){
+@media screen and (max-width: 940px){
     .signupForm{
         font-size: 20px;
         margin-top: 50px;
-margin-left: 100px;
+margin-left: 10px;
     }
     .loginForm{
         font-size: 20px;
@@ -39,9 +72,7 @@ margin-left: 0px;
     color: white;
     padding: 12px;
   margin: 10px 0;
-  border: none;
   width: 50%;
-  border-radius: 3px;
   border: 1px solid black;
   cursor: pointer;
   font-size: 17px;

@@ -15,7 +15,7 @@ class NewCategory extends React.Component {
     }
     checkCategoryValidation=()=>{
         let categoryerror=""
-        if(this.state.newCategory==""){
+        if(this.state.newCategory.length<=1){
             categoryerror="*Mandatory"
             this.setState({categoryError:categoryerror,buttonStatus:true})
             return false
@@ -35,15 +35,10 @@ class NewCategory extends React.Component {
         this.checkCategoryValidation()
         console.log(this.state.newCategory)
     }
-    newId=(event)=>{
-        
-        this.setState({id:event.target.value})
-        console.log(this.state.id)
-    }
+    
     
     addNewItem=()=>{
         let categoryadd =  {
-            "id":this.state.id,
             "category":this.state.newCategory
           }
           console.log(categoryadd)
@@ -63,19 +58,13 @@ class NewCategory extends React.Component {
                 <br></br>
                 <br></br>
                 <DashboardHeader></DashboardHeader>
+                <br></br>
             <div className="loginForm">
         <form>
             <fieldset>
-
                 <h2 style={{textAlign: "center",fontFamily:" Georgia, 'Times New Roman', Times, serif",color:"rgb(80, 80, 116)"}}>Add new Category </h2>
-                <label style={{marginLeft:"-20px"}} >Category Id:&nbsp;</label>
-                <input type="text" onChange={this.newId} style={{fontSize:"13px"}} />
-                <br></br>
-                <br></br>
-                <label >Name:&nbsp;</label>
-                <input type="text" onChange={this.newCategory} />
-                <span style={{fontSize:"13px",color:"red"}}>{this.state.categoryError}</span>
-                <br></br>
+                <label >Name:&nbsp;</label><span style={{fontSize:"13px",color:"red"}}>{this.state.categoryError}</span>
+                <input type="text" onChange={this.newCategory} />  
                 <br></br>
                 <Link to="/dashboard" style={{textDecoration:"none",color:"white"}}>
                 <button type="submit" onClick={this.addNewItem} disabled={this.state.buttonStatus} className="submit">Add category</button>

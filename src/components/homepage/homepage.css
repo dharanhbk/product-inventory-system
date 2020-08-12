@@ -41,12 +41,13 @@
  }
  @media screen and (max-width: 1450px){
      .logo{
-         width: 200px;
+         width: 180px;
+         margin-left: 0px;
      }
      .login{
          font-size: 18px;
          padding: 3px;
-         margin-left: 30px;
+         margin-left: 10px;
      }
      .signup{
         font-size: 0px;

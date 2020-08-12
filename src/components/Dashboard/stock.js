@@ -1,8 +1,10 @@
 import React from 'react'
 import Chart from "react-google-charts";
+import {Line} from 'react-chartjs-2';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 import DashboardHeader from '../homepage/dashboardHeader';
+
 
 
 class Stock extends React.Component{
@@ -17,14 +19,13 @@ class Stock extends React.Component{
     }
     
     componentWillMount(){
-       
         this.getblogs()
-        
     }
-
     componentDidMount(){
         this.getblogs()
     }
+
+
     getblogs=()=>{
         Axios.get('http://localhost:3000/products')
 
@@ -38,7 +39,6 @@ class Stock extends React.Component{
                             console.log(this.arr);
                         })
                     }, (error)=>{
-
                         console.log(error)
                         
                     })
@@ -55,8 +55,12 @@ class Stock extends React.Component{
                 <DashboardHeader ></DashboardHeader> 
                 <br></br>
                 <br></br>
-                <Link to="/dashboard"> <span style={{marginTop:"100px"}}> Back to Dashboard </span></Link>
-
+                <div className="topnav">
+                <Link to="/dashboard"> Dashboard</Link>
+                <Link to="/stockdetails" >Stock Details</Link>
+                <Link to="/add-new">Add new item </Link>
+                <Link to="/add-new-category">Add new Category</Link>
+                </div>
                 <Chart
                     width={'1800px'}
                     height={'600px'}
@@ -67,8 +71,12 @@ class Stock extends React.Component{
                         title: 'Stock Details',
                         is3D:true
                     }}
-                    
+                    legendToggle
                 />
+                <br></br>
+                <div>
+                
+      </div>
                 </div>
         );
     }

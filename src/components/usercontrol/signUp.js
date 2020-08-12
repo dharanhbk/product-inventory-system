@@ -68,14 +68,19 @@ class SignUp extends React.Component{
         this.setState({password:e.target.value})
         this.checkPasswordValidation()
     }
-    btnstatus=()=>{
+    btnstatus=async()=>{
         console.log("button status")
         let frndreqbody =  {
             "name":this.state.fullname,
             "email":this.state.email,
             "password":this.state.password
           }
-        if(this.state.nameError===''&&this.state.emailError===''&&this.state.passwordError==='' ){
+          const emailid= await Axios.get("http://localhost:3000/register?email="+this.state.email)
+          console.log(emailid)
+            if(this.state.email=== emailid.data[0].email){
+              alert("Already have an account")
+          }
+        else if(this.state.nameError===''&&this.state.emailError===''&&this.state.passwordError==='' ){
 
             Axios.post('http://localhost:3000/register', frndreqbody)
                 .then(response=>{
@@ -96,25 +101,20 @@ class SignUp extends React.Component{
         return(
             <div>
             <Header></Header>
+            <br></br>
+            <br></br>
             <div className="signupForm">
             <form>
                 <fieldset>
     
                     <h2 style={{textAlign:" center",fontFamily: "Georgia, 'Times New Roman', Times, serif",color:"rgb(80, 80, 116)"}}>Sign Up </h2>
                     <label >Name: </label> <span style={{color:"red",fontSize:"12px"}}>{this.state.nameError}</span><br></br>
-                    <input type="text" onChange={this.getName} />&nbsp;
-                    <br></br>
-                    <br></br>
-                    <label >E-mail: </label><span style={{color:"red",fontSize:"12px"}}>{this.state.emailError}</span><br></br>
+                    <input type="text" onChange={this.getName} />&nbsp;<br></br>
+                    <label > E-mail: </label><span style={{color:"red",fontSize:"12px"}}>{this.state.emailError}</span><br></br>
                     <input type="text"  onChange={this.getEmail}/>&nbsp;
-                    
-                    <br></br>
-                    <br></br>
                     <label >Password:&nbsp;</label><span style={{color:"red",fontSize:"12px"}}>{this.state.passwordError}</span><br></br>
                     <input type="password" onChange={this.getPassword}  />&nbsp;
                     
-                    <br></br>
-                    <br></br>
                     <button type="submit"  className="submit"  onClick={this.btnstatus}>SignUp</button>
                     <br></br>
                     <span style={{fontSize:"17px"}}>Already have an account? </span>

@@ -124,6 +124,8 @@ class AddNew extends React.Component{
                 <br></br>
                 <br></br>
                 <DashboardHeader></DashboardHeader>
+                <br></br>
+                <br></br>
             <div className="AddItemForm">
         <form>
             <fieldset>
@@ -132,36 +134,36 @@ class AddNew extends React.Component{
                 <label >Product Name: </label><span style={{color:"red",fontSize:"12px"}}>{this.state.nameError}<br></br></span>
                 <input type="text"    onChange={this.getName}/ >&nbsp;
                 <br></br>
-                <br></br>
                 <label >Product Id: </label><span style={{color:"red",fontSize:"12px"}}>{this.state.idError}<br></br></span>
                 <input type="text" onChange={this.getId}/>&nbsp;
-                <br></br>
+
                 <br></br>
                 <label >Qty in stock:&nbsp;</label><br></br>
-                <input type="number" onChange={this.getQty} defaultValue="1" />&nbsp;
-                <br></br>
+                <input type="number" onChange={this.getQty} min="0" defaultValue="1" />&nbsp;
+                
                 <br></br>
                 <label style={{marginLeft:"-10pxpx"}} > Category :&nbsp;</label><br></br>
-                <select name="list" id="list" onChange={this.getCategory} >
+                <select  id="list" onChange={this.getCategory} >
                     {this.state.allCty.map(cty=><option key={cty.id} value={cty.category}>{cty.category}</option>)}
                 </select>
-                <br></br>
+                
                 <br></br>
                 <label > Price in $ :&nbsp;</label><br></br>
-                <input type="number" onChange={this.getPrice} defaultValue="0"/>
-                <br></br>
+                <input type="number" onChange={this.getPrice} min="0" defaultValue="0"/>
                 <br></br>
                 <span style={{display:"inline"}}> 
                     <label>Image: </label><input type="file" onChange={this.getImage} multiple accept='image/*' />
                     <span style={{color:"red",fontSize:"12px"}}>{this.state.productimagError}</span>
                 </span> 
-                <br></br>
                      
                 <br></br>
+                <br></br>
                     {/* <Link to='/dashboard' style={{textDecoration:"none",color:"white"}}> */}
-                    <button type="submit" onClick={this.addNewItem}  className="submit" style={{float:"left"}} >Save Item</button>
-                <button type="submit"  className="submit" style={{float:" right", background:" red"}} >
-                <Link to='/dashboard' style={{textDecoration:"none",color:"white"}}>Cancel</Link></button>
+                    <button type="submit" onClick={this.addNewItem}  className="button3"  >Save Item</button>&nbsp;
+               
+                <Link to='/dashboard' style={{textDecoration:"none",color:"white"}}>
+                <button type="submit"  className="button4"  >Cancel</button>
+                </Link>
 
             </fieldset>
         </form>

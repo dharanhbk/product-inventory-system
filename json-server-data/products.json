@@ -2,33 +2,39 @@
   "products": [
     {
       "product_name": "Tracks",
-      "id": "1",
-      "quantity": "15",
-      "category": "Clothing",
-      "price": "10",
+      "id": 1,
+      "quantity": "20",
+      "category": "Clothes",
+      "price": "25",
       "productimage": "product2.png",
       "chart": {
         "product-name": "Tracks",
-        "quantity": "15"
+        "quantity": "20"
       }
     },
     {
-      "product_name": "Caps",
-      "id": "8",
-      "quantity": "15",
-      "category": "Caps",
-      "price": "5",
-      "productimage": "product6.png",
-      "chart": {}
+      "product_name": "Shirt",
+      "id": 2,
+      "quantity": "5",
+      "category": "Clothes",
+      "price": "60",
+      "productimage": "product3.png",
+      "chart": {
+        "product-name": "Shirt",
+        "quantity": "5"
+      }
     },
     {
-      "product_name": "Fastrack",
-      "id": "41",
-      "quantity": "47",
-      "category": "Watch",
-      "price": "20",
-      "productimage": "product7.png",
-      "chart": {}
+      "product_name": "Bag",
+      "id": 3,
+      "quantity": "14",
+      "category": "Bag",
+      "price": "25",
+      "productimage": "product4.png",
+      "chart": {
+        "product-name": "Bag",
+        "quantity": "14"
+      }
     }
   ],
   "addcategory": [
@@ -37,94 +43,52 @@
       "category": "Select"
     },
     {
-      "id": 2,
-      "category": "Watch"
+      "category": "Bag",
+      "id": 2
     },
     {
-      "id": 3,
-      "category": "Cosmetics"
+      "category": "Shoe",
+      "id": 3
     },
     {
-      "id": 4,
-      "category": "Machine"
+      "category": "Clothes",
+      "id": 4
     },
     {
-      "id": 5,
-      "category": "Electronics"
-    },
-    {
-      "id": 6,
-      "category": "Home"
-    },
-    {
-      "id": "15",
-      "category": "Mobiles"
-    },
-    {
-      "id": "45",
-      "category": "Caps"
-    },
-    {
-      "id": "100",
-      "category": "Clothes"
-    },
-    {
-      "id": "66",
-      "category": "Furnitures"
-    },
-    {
-      "id": "_qOdtOy",
-      "category": "Slippers"
+      "category": "Cap",
+      "id": 5
     }
   ],
   "register": [
     {
-      "id": 1,
-      "name": "sudgughw",
-      "email": "ks@gmail.com",
-      "password": "dwqgug231"
-    },
-    {
-      "id": 2,
-      "name": "sudgw",
-      "email": "mss@gmail.com",
-      "password": "dwqxgug231"
-    },
-    {
-      "name": "bkwiue",
-      "email": "jwkbieu@.com",
-      "password": "eqg87tqedc",
-      "id": 3
-    },
-    {
-      "name": "ddfw",
-      "email": "@.com",
-      "password": "ijeifewm",
-      "id": 4
-    },
-    {
-      "name": "sajb",
-      "email": "jabjdnic@.com",
-      "password": "jbdasiufi4sj",
-      "id": 5
-    },
-    {
-      "name": "sbjdf",
-      "email": "@.com",
-      "password": "ajdowjojfo",
-      "id": 6
-    },
-    {
-      "name": "Dharanidharan",
-      "email": "kmdharan@gmail.com",
-      "password": "123456789",
-      "id": 7
-    },
-    {
       "name": "Admin",
       "email": "admin@gmail.com",
       "password": "12345",
-      "id": 8
+      "id": 1
+    },
+    {
+      "name": "Dharanidharan",
+      "email": "kmdd@gmail.com",
+      "password": "12345",
+      "id": 2
+    },
+    {
+      "name": "dharan",
+      "email": "admin@gmail.com",
+      "password": "12345",
+      "id": 3
+    },
+    {
+      "name": "dqdw",
+      "email": "admin@gmail.com",
+      "password": "12345",
+      "id": 4
+    },
+    {
+      "name": "dharan",
+      "email": "admin@gmail.com",
+      "password": "12345",
+      "id": 5
     }
   ]
 }
