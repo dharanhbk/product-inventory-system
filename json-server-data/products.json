@@ -35,6 +35,30 @@
         "product-name": "Bag",
         "quantity": "14"
       }
+    },
+    {
+      "product_name": "Shoe",
+      "id": 4,
+      "quantity": "12",
+      "category": "Shoe",
+      "price": "16",
+      "productimage": "product1.png",
+      "chart": {
+        "product-name": "Shoe",
+        "quantity": "12"
+      }
+    },
+    {
+      "product_name": "Bottle",
+      "id": 5,
+      "quantity": "6",
+      "category": "Bottles",
+      "price": "12",
+      "productimage": "Pilsner.jpg",
+      "chart": {
+        "product-name": "Bottle",
+        "quantity": "6"
+      }
     }
   ],
   "addcategory": [
@@ -57,6 +81,10 @@
     {
       "category": "Cap",
       "id": 5
+    },
+    {
+      "category": "Bottles",
+      "id": 6
     }
   ],
   "register": [

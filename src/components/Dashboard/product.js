@@ -16,7 +16,8 @@ class Product extends React.Component {
             productsearch:[],
             deleteSuccess:false,
             productId:1,
-            searchValue:""
+            searchValue:"",
+            dropdownCategory:[]
         };
     }
 
@@ -28,9 +29,29 @@ class Product extends React.Component {
 
     componentWillMount(){
         this.getBlogs()
+        this.getAllCategory()
     }
 
-
+    getAllCategory=()=>{
+        axios.get("http://localhost:3000/addcategory")
+        .then(response=>{
+            this.setState({dropdownCategory:response.data})
+            console.log(this.state.dropdownCategory)
+            this.state.dropdownCategory.map(p=>console.log(p.category))
+        })
+    }
+    getCategory=(e)=>{
+        let drop = e.target.value;
+        if(drop=='Select'){
+            this.getBlogs()
+        }
+        let dropvalues = this.state.productsearch.filter(f=>{
+          return f.category.match(drop)
+        })
+        this.setState({
+         products:dropvalues
+        })
+      }
     getBlogs(){
 
         axios.get('http://localhost:3000/products')
@@ -160,7 +181,10 @@ class Product extends React.Component {
                 <Link to="/dashboard"> Dashboard</Link>
                 <Link to="/stockdetails" >Stock Details</Link>
                 <Link to="/add-new">Add new item </Link>
-                <Link to="/add-new-category">Add new Category</Link>
+                <Link to="/add-new-category">Add new Category</Link>&nbsp;
+                <select id="filter" onChange={this.getCategory} >
+                            {this.state.dropdownCategory.map(p=><option key={p.id} value={p.category}>{p.category}</option>)}
+                </select>
                 <input type="text" placeholder="Search for product name" name="search" onChange={this.getSearch} />
                 </div>
 
