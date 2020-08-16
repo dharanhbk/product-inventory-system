@@ -52,4 +52,9 @@ table {
     margin-left: 10px;
   }
 }
+@media screen and (max-width: 500px){
+  .chart{
+    width: 20px;
+  }
+}
 

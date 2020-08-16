@@ -181,7 +181,8 @@ class Product extends React.Component {
                 <Link to="/dashboard"> Dashboard</Link>
                 <Link to="/stockdetails" >Stock Details</Link>
                 <Link to="/add-new">Add new item </Link>
-                <Link to="/add-new-category">Add new Category</Link>&nbsp;
+                <Link to="/add-new-category">Add new Category</Link>
+                <label for="filter">Filter</label>
                 <select id="filter" onChange={this.getCategory} >
                             {this.state.dropdownCategory.map(p=><option key={p.id} value={p.category}>{p.category}</option>)}
                 </select>

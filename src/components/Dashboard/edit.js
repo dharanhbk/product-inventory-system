@@ -113,7 +113,7 @@ class Edit extends React.Component{
                 <br></br>
                 <br></br>
                 <label >Product Id:  </label><br></br>
-                <input type="text" value={this.state.id} onChange={this.editid} />
+                <input type="text" value={this.state.id} onChange={this.editid} readOnly/>
                 <br></br>
                 <br></br>
                 <label >Quantity:&nbsp;</label><br></br>
@@ -125,7 +125,7 @@ class Edit extends React.Component{
                 <br></br>
                 <br></br>
                 <label > Price in $ :&nbsp;</label><br></br>
-                <input type="number" value={this.state.price} min="0" onChange={this.editPrice} />
+                <input type="number" value={this.state.price} min="1" onChange={this.editPrice} />
                 <br></br>
                 <br></br>
                 

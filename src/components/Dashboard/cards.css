@@ -145,7 +145,7 @@
     width: 100px;
   }
   
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1050px) {
     .topnav a, .topnav input[type=text],.topnav select {
       float: none;
       display: block;
@@ -156,6 +156,7 @@
     }
     
     .topnav input[type=text],select {
-      border: 1px solid #ccc;  
+      border: 1px solid #ccc; 
+      text-align: center; 
     }
   }

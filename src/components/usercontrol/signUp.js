@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import Header from "../homepage/header";
-
+import Modal from 'react-bootstrap/Modal'
 
 class SignUp extends React.Component{
 
@@ -77,10 +77,11 @@ class SignUp extends React.Component{
           }
           const emailid= await Axios.get("http://localhost:3000/register?email="+this.state.email)
           console.log(emailid)
+          if(emailid.data.length!==0){
             if(this.state.email=== emailid.data[0].email){
               alert("Already have an account")
-          }
-        else if(this.state.nameError===''&&this.state.emailError===''&&this.state.passwordError==='' ){
+          }}
+            else if(this.state.nameError===''&&this.state.emailError===''&&this.state.passwordError==='' ){
 
             Axios.post('http://localhost:3000/register', frndreqbody)
                 .then(response=>{
@@ -91,6 +92,7 @@ class SignUp extends React.Component{
                 })
                 this.props.history.push('/login')
                 alert("Succesfully registered")
+                
         }
         else{
             alert("Enter valid details")

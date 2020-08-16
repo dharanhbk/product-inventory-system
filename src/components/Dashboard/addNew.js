@@ -15,6 +15,7 @@ class AddNew extends React.Component{
             productimage:'',
             nameError:"*Must contain 3 letters",
             idError:"*Not Mandatory",
+            ctyError:"*Select Category",
             qtyError:"",
             priceError:"",
             productimagError:'*Mandatory',
@@ -43,7 +44,15 @@ class AddNew extends React.Component{
             this.setState({productimagError:productimagerror})
         }
     }
-
+    checkCategory=()=>{
+        let ctyerror=' '
+        if(this.state.category=="Select" || this.state.category==""){
+            ctyerror="*Select Category"
+            this.setState({ctyError:ctyerror})
+        }else{
+            this.setState({ctyError:ctyerror})
+        }
+    }
     getAllCty=()=>{
         axios.get("http://localhost:3000/addcategory")
         .then(response=>{
@@ -73,7 +82,9 @@ class AddNew extends React.Component{
     }
     getCategory=(event)=>{
         console.log(event.target.value)
+        this.checkCategory()
         this.setState({cty:event.target.value});
+        this.checkCategory()
     }
 
 
@@ -142,14 +153,15 @@ class AddNew extends React.Component{
                 <input type="number" onChange={this.getQty} min="0" defaultValue="1" />&nbsp;
                 
                 <br></br>
-                <label style={{marginLeft:"-10pxpx"}} > Category :&nbsp;</label><br></br>
+                <label style={{marginLeft:"-10pxpx"}} > Category :&nbsp;</label>
+                <span style={{color:"red",fontSize:"12px"}}>{this.state.ctyError}</span><br></br>
                 <select  id="list" onChange={this.getCategory} >
                     {this.state.allCty.map(cty=><option key={cty.id} value={cty.category}>{cty.category}</option>)}
                 </select>
                 
                 <br></br>
                 <label > Price in $ :&nbsp;</label><br></br>
-                <input type="number" onChange={this.getPrice} min="0" defaultValue="0"/>
+                <input type="number" onChange={this.getPrice} min="1" defaultValue="1"/>
                 <br></br>
                 <span style={{display:"inline"}}> 
                     <label>Image: </label><input type="file" onChange={this.getImage} multiple accept='image/*' />

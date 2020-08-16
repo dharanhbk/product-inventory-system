@@ -3,61 +3,46 @@
     {
       "product_name": "Tracks",
       "id": 1,
-      "quantity": "20",
+      "quantity": "7",
       "category": "Clothes",
-      "price": "25",
+      "price": "15",
       "productimage": "product2.png",
       "chart": {
         "product-name": "Tracks",
-        "quantity": "20"
+        "quantity": "7"
       }
     },
     {
-      "product_name": "Shirt",
-      "id": 2,
-      "quantity": "5",
+      "product_name": "Tupperware",
+      "id": 3,
+      "quantity": "16",
+      "category": "Bottles",
+      "price": "20",
+      "productimage": "Pilsner.jpg",
+      "chart": {}
+    },
+    {
+      "product_name": "T-shirt",
+      "id": 4,
+      "quantity": "9",
       "category": "Clothes",
-      "price": "60",
+      "price": "6",
       "productimage": "product3.png",
       "chart": {
-        "product-name": "Shirt",
-        "quantity": "5"
+        "product-name": "T-shirt",
+        "quantity": "9"
       }
     },
     {
-      "product_name": "Bag",
-      "id": 3,
-      "quantity": "14",
-      "category": "Bag",
-      "price": "25",
-      "productimage": "product4.png",
-      "chart": {
-        "product-name": "Bag",
-        "quantity": "14"
-      }
-    },
-    {
-      "product_name": "Shoe",
-      "id": 4,
-      "quantity": "12",
-      "category": "Shoe",
-      "price": "16",
-      "productimage": "product1.png",
-      "chart": {
-        "product-name": "Shoe",
-        "quantity": "12"
-      }
-    },
-    {
-      "product_name": "Bottle",
+      "product_name": "Fastrack",
       "id": 5,
-      "quantity": "6",
-      "category": "Bottles",
+      "quantity": "10",
+      "category": "Watch",
       "price": "12",
-      "productimage": "Pilsner.jpg",
+      "productimage": "product7.png",
       "chart": {
-        "product-name": "Bottle",
-        "quantity": "6"
+        "product-name": "Fastrack",
+        "quantity": "10"
       }
     }
   ],
@@ -67,11 +52,11 @@
       "category": "Select"
     },
     {
-      "category": "Bag",
+      "category": "Shoes",
       "id": 2
     },
     {
-      "category": "Shoe",
+      "category": "Bottles",
       "id": 3
     },
     {
@@ -79,11 +64,11 @@
       "id": 4
     },
     {
-      "category": "Cap",
+      "category": "Bag",
       "id": 5
     },
     {
-      "category": "Bottles",
+      "category": "Watch",
       "id": 6
     }
   ],
@@ -95,28 +80,16 @@
       "id": 1
     },
     {
-      "name": "Dharanidharan",
+      "name": "Dharan",
       "email": "kmdd@gmail.com",
       "password": "12345",
       "id": 2
     },
     {
-      "name": "dharan",
-      "email": "admin@gmail.com",
+      "name": "Nafiya",
+      "email": "nafiya@gmail.com",
       "password": "12345",
       "id": 3
-    },
-    {
-      "name": "dqdw",
-      "email": "admin@gmail.com",
-      "password": "12345",
-      "id": 4
-    },
-    {
-      "name": "dharan",
-      "email": "admin@gmail.com",
-      "password": "12345",
-      "id": 5
     }
   ]
 }
