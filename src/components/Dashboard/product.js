@@ -17,7 +17,8 @@ class Product extends React.Component {
             deleteSuccess:false,
             productId:1,
             searchValue:"",
-            dropdownCategory:[]
+            dropdownCategory:[],
+            sorting:false
         };
     }
 
@@ -40,18 +41,7 @@ class Product extends React.Component {
             this.state.dropdownCategory.map(p=>console.log(p.category))
         })
     }
-    getCategory=(e)=>{
-        let drop = e.target.value;
-        if(drop=='Select'){
-            this.getBlogs()
-        }
-        let dropvalues = this.state.productsearch.filter(f=>{
-          return f.category.match(drop)
-        })
-        this.setState({
-         products:dropvalues
-        })
-      }
+   
     getBlogs(){
 
         axios.get('http://localhost:3000/products')
@@ -95,7 +85,18 @@ class Product extends React.Component {
         state: {productId:editId}
     })
     }
-
+    getCategory=(e)=>{
+        let drop = e.target.value;
+        if(drop=='Select'){
+            this.getBlogs()
+        }
+        let dropvalues = this.state.productsearch.filter(f=>{
+          return f.category.match(drop)
+        })
+        this.setState({
+         products:dropvalues
+        })
+      }
     getSearch=(event)=>{
                         
         let searchV = event.target.value
@@ -141,72 +142,59 @@ class Product extends React.Component {
     renderCard=()=>{
         console.log(this.state.products);
         return (
-                this.state.products.map(product=>{
-                    return (
-                        <Cards 
-                        key={product.id} id ={product.id} name={product.product_name} quantity={product.quantity} price ={product.price}
-                        category ={product.category} prodImage={product.productimage}
-                        deleteId={this.deleteProductWithId} editId={this.editProductWithId}
-                        />)
-                    })
-        )
-    }
-
-
-
+            this.state.products.map(product=>{
+                return (
+                    <Cards 
+                    key={product.id} id ={product.id} name={product.product_name} quantity={product.quantity} price ={product.price}
+                    category ={product.category} prodImage={product.productimage}
+                    deleteId={this.deleteProductWithId} editId={this.editProductWithId}
+                    />)
+                })
+                )
+            }
+            
+            
+            sortByname=()=>{
+                console.log("sort function called...")
+                console.log(this.state.products);
+                const arr = this.state.products;
+                if(this.state.sorting==false){
+                arr.sort((a,b)=>{
+                    if(a.product_name.toLowerCase()<b.product_name.toLowerCase()) return -1;
+                    if(a.product_name.toLowerCase()>b.product_name.toLowerCase()) return 1;
+                    if(a.product_name.toLowerCase()==b.product_name.toLowerCase()) return 0;
+                })
+                console.log(arr);
+                this.setState({products:arr})
+               return this.setState({sorting:true})
+            }
+            if(this.state.sorting==true){
+                this.getBlogs()
+                return this.setState({sorting:false})
+            }
+            }
+    
    
         
         render() { 
         return (
             <div>
-                {/* <div className="dashBoard">
-                <span>
-                <label>Search: </label>
-                <input type="text" placeholder="Search for product name" name="search" onChange={this.getSearch} />
-                </span>
-               <span>
-               <Link to="/dashboard" style={{padding:"50px",textDecoration:"none",color:"brown"}}>Dashboard</Link>
-               </span>
-                <span>
-                <Link to="/stockdetails" style={{padding:"50px",textDecoration:"none",color:"brown"}}>Stock Details</Link>
-                </span>
-                <span>
-                <Link to="/add-new"><button type="button" className="button1"  style={{marginLeft: "100px"}}>Add new item </button></Link>
-                </span>
-                <span>
-                <Link to="/add-new-category"><button type="button" className="button2"  style={{marginLeft: "100px"}}>Add new Category </button></Link>
-                </span>
-                </div> */}
+                
                 <div className="topnav">
                 <Link to="/dashboard"> Dashboard</Link>
                 <Link to="/stockdetails" >Stock Details</Link>
                 <Link to="/add-new">Add new item </Link>
                 <Link to="/add-new-category">Add new Category</Link>
-                <label for="filter">Filter</label>
+                <label>Filter:</label>
                 <select id="filter" onChange={this.getCategory} >
                             {this.state.dropdownCategory.map(p=><option key={p.id} value={p.category}>{p.category}</option>)}
                 </select>
                 <input type="text" placeholder="Search for product name" name="search" onChange={this.getSearch} />
+                <button onClick={this.sortByname}>Sort by name</button>
                 </div>
 
                 <br></br>
                 <br></br>
-                {/* <table border="1">
-                <thead>
-                <tr>
-                    <th>Product Image</th>
-                    <th>Product Id</th>
-                    <th>Product Name</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Category</th>
-                    <th colSpan="2" style={{textAlign:"center"}}>Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                {this.renderTable()}
-                </tbody>
-                </table> */}
                 <div className="row">
                     {this.renderCard()}
                 </div>

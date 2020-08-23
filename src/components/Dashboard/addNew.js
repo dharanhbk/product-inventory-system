@@ -111,10 +111,10 @@ class AddNew extends React.Component{
                     console.error(error);
                 })
                 this.props.history.push('/dashboard')
-                alert("product added Successfully")
+               // alert("product added Successfully")
             }
             else{
-                alert("Enter valid product details")
+                //alert("Enter valid product details")
             }
     }
     getImage=(event)=>{

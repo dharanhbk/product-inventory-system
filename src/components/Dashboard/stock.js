@@ -1,6 +1,6 @@
 import React from 'react'
 import Chart from "react-google-charts";
-import {Line} from 'react-chartjs-2';
+import {Line, Bar} from 'react-chartjs-2';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 import DashboardHeader from '../homepage/dashboardHeader';
@@ -14,6 +14,9 @@ class Stock extends React.Component{
             products:[],
             arr : [
                 ["product name","quantity"]
+            ],
+            arr1: [
+                ["Category","quantity"]
             ]
         }
     }
@@ -36,6 +39,10 @@ class Stock extends React.Component{
                         console.log(this.state.products)
                         this.state.products.map(p=>{
                             this.state.arr.push([p.product_name,parseInt(p.quantity)]);
+                            console.log(this.arr);
+                        })
+                        this.state.products.map(p=>{
+                            this.state.arr1.push([p.category,parseInt(p.quantity)]);
                             console.log(this.arr);
                         })
                     }, (error)=>{
@@ -69,6 +76,18 @@ class Stock extends React.Component{
                     data={this.state.arr}
                     options={{
                         title: 'Stock Details',
+                        is3D:true
+                    }}
+                    legendToggle
+                />
+                <Chart
+                    width={'1800px'}
+                    height={'600px'}
+                    chartType="PieChart"
+                    loader={<div>Loading Chart</div>}
+                    data={this.state.arr1}
+                    options={{
+                        title: 'Category Details',
                         is3D:true
                     }}
                     legendToggle

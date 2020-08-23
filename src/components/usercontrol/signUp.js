@@ -91,11 +91,11 @@ class SignUp extends React.Component{
                     console.error(error);
                 })
                 this.props.history.push('/login')
-                alert("Succesfully registered")
+                //alert("Succesfully registered")
                 
         }
         else{
-            alert("Enter valid details")
+            //alert("Enter valid details")
         }
     }
 

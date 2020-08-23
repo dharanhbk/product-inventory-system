@@ -22,28 +22,31 @@
       "chart": {}
     },
     {
-      "product_name": "T-shirt",
+      "product_name": "Tshirt",
       "id": 4,
       "quantity": "9",
       "category": "Clothes",
       "price": "6",
       "productimage": "product3.png",
-      "chart": {
-        "product-name": "T-shirt",
-        "quantity": "9"
-      }
+      "chart": {}
     },
     {
-      "product_name": "Fastrack",
-      "id": 5,
-      "quantity": "10",
-      "category": "Watch",
-      "price": "12",
-      "productimage": "product7.png",
-      "chart": {
-        "product-name": "Fastrack",
-        "quantity": "10"
-      }
+      "product_name": "Bags",
+      "id": 6,
+      "quantity": 1,
+      "category": "Bag",
+      "price": "1",
+      "productimage": "product4.png",
+      "chart": {}
+    },
+    {
+      "product_name": "Net",
+      "id": 7,
+      "quantity": 1,
+      "category": "Bottles",
+      "price": "1",
+      "productimage": "standard-leaf.jpg",
+      "chart": {}
     }
   ],
   "addcategory": [

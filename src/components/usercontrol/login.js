@@ -10,7 +10,8 @@ class Login extends React.Component{
         super(props)
         this.state={
             email:"",
-            password:""
+            password:"",
+            loginError:""
         }
     }
 
@@ -23,11 +24,11 @@ class Login extends React.Component{
                 this.props.history.push("/dashboard")
              }
              else{
-                 alert("invalid password")
+                 this.setState({loginError:"*Enter valid details"})
              }
              }
              else{
-                alert("Invalid user details")
+                this.setState({loginError:"*Enter valid details"})
                 console.log("invalid user....")
                 this.props.history.push("/login")
          }
@@ -53,7 +54,8 @@ class Login extends React.Component{
                 <br></br>
                 <label >Password:&nbsp;</label><br></br>
                 <input type="password" onChange={this.getPassword}/>
-                
+                <br></br>
+                <span style={{fontSize:"15px",color:"red"}}>{this.state.loginError}</span>
                 <br></br>
                 <input type="checkbox"  /> Remember me &nbsp; 
                 <span style={{fontSize:"15px"}} >Forget password?</span>  

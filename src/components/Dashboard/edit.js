@@ -41,7 +41,7 @@ class Edit extends React.Component{
     }
     checkValidName=()=>{
         let nameerror=''
-        if(this.state.name.length<3){
+        if(this.state.name.length<2){
             this.setState({nameError:" *Must contain 3 letters",buttonStatus:true})
         }else{
             this.setState({nameError:" ",buttonStatus:false})

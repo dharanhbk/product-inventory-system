@@ -6,7 +6,7 @@ class HomePage extends React.Component{
     render(){
         return(
             <div>
-                <Header></Header>
+            <Header></Header>
             <p style={{textAlign:"center" , marginTop:"100px"}}> </p>
             <Login> </Login>
             </div>
