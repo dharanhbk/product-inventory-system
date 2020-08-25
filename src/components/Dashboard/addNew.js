@@ -142,15 +142,15 @@ class AddNew extends React.Component{
             <fieldset>
 
                 <h2 style={{textAlign: "center",fontFamily:" Georgia, 'Times New Roman', Times, serif",color:"rgb(80, 80, 116)"}}>Add Product </h2>
-                <label >Product Name: </label><span style={{color:"red",fontSize:"12px"}}>{this.state.nameError}<br></br></span>
-                <input type="text"    onChange={this.getName}/ >&nbsp;
+                <label  >Product Name: </label><span style={{color:"red",fontSize:"12px"}}>{this.state.nameError}<br></br></span>
+                <input type="text" placeholder="Product name"    onChange={this.getName}/ >&nbsp;
                 <br></br>
                 <label >Product Id: </label><span style={{color:"red",fontSize:"12px"}}>{this.state.idError}<br></br></span>
                 <input type="text" onChange={this.getId}/>&nbsp;
 
                 <br></br>
                 <label >Qty in stock:&nbsp;</label><br></br>
-                <input type="number" onChange={this.getQty} min="0" defaultValue="1" />&nbsp;
+                <input type="number" placeholder="Quantity" onChange={this.getQty} min="0" defaultValue="1" />&nbsp;
                 
                 <br></br>
                 <label style={{marginLeft:"-10pxpx"}} > Category :&nbsp;</label>
@@ -171,10 +171,10 @@ class AddNew extends React.Component{
                 <br></br>
                 <br></br>
                     {/* <Link to='/dashboard' style={{textDecoration:"none",color:"white"}}> */}
-                    <button type="submit" onClick={this.addNewItem}  className="button3"  >Save Item</button>&nbsp;
+                    <button type="submit" data-testid="addnewbutton" onClick={this.addNewItem}  className="button3"  >Save Item</button>&nbsp;
                
                 <Link to='/dashboard' style={{textDecoration:"none",color:"white"}}>
-                <button type="submit"  className="button4"  >Cancel</button>
+                <button type="submit"  className="button4"   >Cancel</button>
                 </Link>
 
             </fieldset>

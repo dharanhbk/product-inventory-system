@@ -13,6 +13,8 @@
     "bootstrap": "^4.5.0",
     "chart.js": "^2.9.3",
     "concurrently": "^5.3.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.3",
     "font-awesome": "^4.7.0",
     "json-server": "^0.16.1",
     "react": "^16.13.1",
@@ -24,7 +26,8 @@
     "react-refetch": "^3.0.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-test-renderer": "^16.13.1"
   },
   "scripts": {
     "start": "set PORT=4444 && react-scripts start",
@@ -47,5 +50,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "jsdom": "16.4.0",
+    "jsdom-global": "3.0.2"
   }
 }

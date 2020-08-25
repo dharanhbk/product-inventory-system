@@ -49,11 +49,11 @@ class Login extends React.Component{
 
                 <h2 style={{textAlign: "center",fontFamily:" Georgia, 'Times New Roman', Times, serif",color:"rgb(80, 80, 116)"}}>Login </h2>
                 <label >E-Mail ID:&nbsp;</label><br></br>
-                <input type="text" onChange={this.getEmail}/>
+                <input type="text" placeholder="Enter Email" onChange={this.getEmail}/>
                 
                 <br></br>
                 <label >Password:&nbsp;</label><br></br>
-                <input type="password" onChange={this.getPassword}/>
+                <input type="password" placeholder="Enter Password" onChange={this.getPassword}/>
                 <br></br>
                 <span style={{fontSize:"15px",color:"red"}}>{this.state.loginError}</span>
                 <br></br>
@@ -61,7 +61,7 @@ class Login extends React.Component{
                 <span style={{fontSize:"15px"}} >Forget password?</span>  
                 <br></br>
                 <br></br>
-                <button type="submit" onClick={this.login}  className="submit">Login</button>
+                <button type="submit" onClick={this.login} data-testid='button'  className="submit">Login</button>
                 <br></br>
                 <span style={{fontSize: "17px"}}>First time user? </span><span style={{fontSize: "17px", textDecoration: "underline" }}>
                     <Link to="/signup">Create an account</Link></span>
