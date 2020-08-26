@@ -36,7 +36,7 @@ constructor(props){
               <p>Quantity: {this.props.quantity}</p>
               <p>Price: ${this.props.price}</p>
               <p>Category: {this.props.category}</p>
-              <p ><button onClick={this.editProduct} className="button3">Edit</button>&nbsp;
+              <p ><button onClick={this.editProduct} data-testid="editbutton" className="button3">Edit</button>&nbsp;
               <button onClick={this.deleteProduct}className="button4">Delete</button></p>
               </div>
             </div>

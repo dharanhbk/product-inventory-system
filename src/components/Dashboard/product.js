@@ -18,7 +18,8 @@ class Product extends React.Component {
             productId:1,
             searchValue:"",
             dropdownCategory:[],
-            sorting:false
+            sorting:false,
+            sortname:'Sort by name'
         };
     }
 
@@ -117,16 +118,7 @@ class Product extends React.Component {
       console.log(this.state.products);
         return (
                 this.state.products.map(product=>{
-                    return (
-                            // <tr >
-                            // <td>{product.id}</td>
-                            // <td>{product.product_name}</td>
-                            // <td>{product.quantity}</td>
-                            // <td>{product.price}</td>
-                            // <td>{product.category}</td>
-                            // <td style={{textAlign:"center"}}><button>Edit</button></td>
-                            // <td style={{textAlign:"center"}} ><button onClick={this.deleteProduct(product.id)}>Delete</button></td>
-                            // </tr>    
+                    return (  
                           <ProductTable 
                           key={product.id} id ={product.id} name={product.product_name} quantity={product.quantity} price ={product.price}
                           category ={product.category} prodImage={product.productimage}
@@ -166,10 +158,12 @@ class Product extends React.Component {
                 })
                 console.log(arr);
                 this.setState({products:arr})
+                this.setState({sortname:"Back to default"})
                return this.setState({sorting:true})
             }
             if(this.state.sorting==true){
                 this.getBlogs()
+                this.setState({sortname:"Sort by name"})
                 return this.setState({sorting:false})
             }
             }
@@ -190,7 +184,7 @@ class Product extends React.Component {
                             {this.state.dropdownCategory.map(p=><option key={p.id} value={p.category}>{p.category}</option>)}
                 </select>
                 <input type="text" placeholder="Search for product name" name="search" onChange={this.getSearch} />
-                <button onClick={this.sortByname}>Sort by name</button>
+                <button onClick={this.sortByname}>{this.state.sortname}</button>
                 </div>
 
                 <br></br>

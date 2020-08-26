@@ -47,6 +47,18 @@
       "price": "1",
       "productimage": "standard-leaf.jpg",
       "chart": {}
+    },
+    {
+      "product_name": "Fastrack",
+      "id": 8,
+      "quantity": "18",
+      "category": "Watch",
+      "price": 0,
+      "productimage": "product7.png",
+      "chart": {
+        "product-name": "Fastrack",
+        "quantity": "18"
+      }
     }
   ],
   "addcategory": [

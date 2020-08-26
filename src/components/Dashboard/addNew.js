@@ -161,7 +161,7 @@ class AddNew extends React.Component{
                 
                 <br></br>
                 <label > Price in $ :&nbsp;</label><br></br>
-                <input type="number" onChange={this.getPrice} min="1" defaultValue="1"/>
+                <input type="number" placeholder="Price" onChange={this.getPrice} min="1" defaultValue="1"/>
                 <br></br>
                 <span style={{display:"inline"}}> 
                     <label>Image: </label><input type="file" onChange={this.getImage} multiple accept='image/*' />

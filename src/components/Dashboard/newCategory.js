@@ -64,10 +64,10 @@ class NewCategory extends React.Component {
             <fieldset>
                 <h2 style={{textAlign: "center",fontFamily:" Georgia, 'Times New Roman', Times, serif",color:"rgb(80, 80, 116)"}}>Add new Category </h2>
                 <label >Name:&nbsp;</label><span style={{fontSize:"13px",color:"red"}}>{this.state.categoryError}</span>
-                <input type="text" onChange={this.newCategory} />  
+                <input type="text" placeholder="New Category" onChange={this.newCategory} />  
                 <br></br>
                 <Link to="/dashboard" style={{textDecoration:"none",color:"white"}}>
-                <button type="submit" onClick={this.addNewItem} disabled={this.state.buttonStatus} className="submit">Add category</button>
+                <button type="submit" onClick={this.addNewItem} data-testid="addcategory" disabled={this.state.buttonStatus} className="submit">Add category</button>
                 </Link>
                 <Link to="/dashboard" style={{textDecoration:"none",color:"white"}}>
                 <button type="submit"  className="submit" style={{background:"red"}}>Cancel</button>

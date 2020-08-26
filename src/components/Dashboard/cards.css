@@ -155,7 +155,7 @@
   }
   
   @media screen and (max-width: 1050px) {
-    .topnav a, .topnav input[type=text],.topnav select,img {
+    .topnav a, .topnav input[type=text],.topnav select {
       float: none;
       display: block;
       text-align: center;

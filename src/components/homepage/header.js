@@ -13,8 +13,8 @@ class Header extends React.Component{
         return(
             <div className="borderHead">
             <img src={logo} alt ="Logo"className="logo"  />
-            <p className="signup"><Link to="/signup" style={{textDecoration:"none"}}>Register</Link></p>
-            <p className="login"><Link to="/login" style={{textDecoration:"none"}}>Login </Link></p>
+            <p className="signup" data-testid="Register"><Link to="/signup" style={{textDecoration:"none"}}>Register</Link></p>
+            <p className="login" data-testid="Login"><Link to="/login" style={{textDecoration:"none"}}>Login </Link></p>
             {/* <p className="login"><Link to="/table" style={{textDecoration:"none"}}>Table </Link></p> */}
             <p className="header">PRODUCT INVENTORY SYSTEM</p>
         </div>

@@ -12,6 +12,7 @@ class Stock extends React.Component{
         super(props)
         this.state={
             products:[],
+            unique:[],
             arr : [
                 ["product name","quantity"]
             ],
@@ -37,15 +38,30 @@ class Stock extends React.Component{
                         console.log(response.data)
                         this.setState({products: response.data})
                         console.log(this.state.products)
+                        var myarray=[]
                         this.state.products.map(p=>{
-                            this.state.arr.push([p.product_name,parseInt(p.quantity)]);
-                            console.log(this.arr);
+                            this.state.arr.push([p.product_name,parseInt(p.quantity)]) && myarray.push(p.category);
                         })
+                        var unique = myarray.filter((v, i, a) => a.indexOf(v) === i);
+                        this.setState({unique:unique})
+                        console.log(unique)
                         this.state.products.map(p=>{
-                            this.state.arr1.push([p.category,parseInt(p.quantity)]);
-                            console.log(this.arr);
+                            let category= p.category
+                            let sum =0
+                            let productFiltered = this.state.products.filter(prod=>prod.category===category)
+                            console.log(productFiltered)
+                            productFiltered.map(pf=>{
+                                sum+=parseInt(pf.quantity)
+                            })
+                            if(this.state.unique.includes(p.category)){
+                                this.state.arr1.push([p.category,sum])
+                                var index= this.state.unique.indexOf(p.category)
+                                this.state.unique.splice(index,1)
+                            }
+                           
                         })
-                    }, (error)=>{
+                    }, 
+                    (error)=>{
                         console.log(error)
                         
                     })
@@ -68,7 +84,7 @@ class Stock extends React.Component{
                 <Link to="/add-new">Add new item </Link>
                 <Link to="/add-new-category">Add new Category</Link>
                 </div>
-                <Chart
+                {/* <Chart
                     width={'1800px'}
                     height={'600px'}
                     chartType="PieChart"
@@ -79,7 +95,7 @@ class Stock extends React.Component{
                         is3D:true
                     }}
                     legendToggle
-                />
+                /> */}
                 <Chart
                     width={'1800px'}
                     height={'600px'}

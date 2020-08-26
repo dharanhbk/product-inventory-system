@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 import {MemoryRouter as Router} from 'react-router-dom'
-import { render,cleanup, fireEvent  } from '@testing-library/react';
-import { mount, configure} from "enzyme";
+import { render  } from '@testing-library/react';
+import { mount, configure , shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import '@testing-library/jest-dom/extend-expect'
 import AddNew from '../addNew';
 
+
 configure({adapter:new Adapter()});
+
+test('should test Addnewcomponent', () => {
+  const wrapper = shallow(<AddNew />);
+  expect(wrapper).toMatchSnapshot();
+ });
 
 
 describe("all test for Add new component", ()=>{
@@ -26,10 +32,26 @@ it(" check product name", () => {
   const input = wrapper.find("input");
   expect(input.prop("type")).toEqual("text");
   expect(input.prop("placeholder")).toEqual("Product name" );
+  expect(input).toHaveLength(1)
 });
 it(" check product quantity", () => {
   const wrapper = mount(<input type="text" placeholder="Quantity" />);
   const input = wrapper.find("input");
   expect(input.prop("type")).toEqual("text");
   expect(input.prop("placeholder")).toEqual("Quantity" );
+  expect(input).toHaveLength(1)
+});
+it(" check product price", () => {
+  const wrapper = mount(<input type="text" placeholder="Price" />);
+  const input = wrapper.find("input");
+  expect(input.prop("type")).toEqual("text");
+  expect(input.prop("placeholder")).toEqual("Price" );
+  expect(input).toHaveLength(1)
+});
+it(" check Image", () => {
+  const wrapper = mount(<input type="file"  />);
+  const input = wrapper.find("input");
+  expect(input.prop("type")).toEqual("file");
+  expect(input).toHaveLength(1)
+  
 });
