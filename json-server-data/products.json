@@ -17,7 +17,7 @@
       "id": 3,
       "quantity": "16",
       "category": "Bottles",
-      "price": "20",
+      "price": "25",
       "productimage": "Pilsner.jpg",
       "chart": {}
     },
@@ -33,32 +33,11 @@
     {
       "product_name": "Bags",
       "id": 6,
-      "quantity": 1,
+      "quantity": "30",
       "category": "Bag",
       "price": "1",
       "productimage": "product4.png",
       "chart": {}
-    },
-    {
-      "product_name": "Net",
-      "id": 7,
-      "quantity": 1,
-      "category": "Bottles",
-      "price": "1",
-      "productimage": "standard-leaf.jpg",
-      "chart": {}
-    },
-    {
-      "product_name": "Fastrack",
-      "id": 8,
-      "quantity": "18",
-      "category": "Watch",
-      "price": 0,
-      "productimage": "product7.png",
-      "chart": {
-        "product-name": "Fastrack",
-        "quantity": "18"
-      }
     }
   ],
   "addcategory": [

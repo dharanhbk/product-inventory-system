@@ -22,7 +22,12 @@
     display: table;
     clear: both;
   }
-  
+  /* .images{
+    width:200px;
+    height:205px;
+    marginLeft:200px;
+    }   */
+
   @media screen and (max-width: 1050px) {
     .column {
       width: 50%;
@@ -30,18 +35,23 @@
       margin-bottom: 0px;
       float: none;
     }
+    .images{
+      width:100px;
+      height:100px;
+    }
   }
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     background-color: #78bfd1;
   }
+ 
+  
   @media screen and (max-width: 1200px) {
     .card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         padding: 10px; 
-        text-align: center;
-       
+        text-align: center;  
     }
   }
 
@@ -168,4 +178,6 @@
       border: 1px solid #ccc; 
       text-align: center; 
     }
+
+   
   }

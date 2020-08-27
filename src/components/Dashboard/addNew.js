@@ -18,6 +18,7 @@ class AddNew extends React.Component{
             ctyError:"*Select Category",
             qtyError:"",
             priceError:"",
+            existError:"",
             productimagError:'*Mandatory',
             allCty:[]
         }
@@ -57,13 +58,12 @@ class AddNew extends React.Component{
         axios.get("http://localhost:3000/addcategory")
         .then(response=>{
             this.setState({allCty:response.data})
-            console.log(this.state.allCty)
-            this.state.allCty.map(p=>console.log(p.category))
+            //this.state.allCty.map(p=>console.log(p.category))
         })
     }
 
     getId=(event)=>{
-        console.log(event.target.value)
+        //console.log(event.target.value)
         this.setState({id:event.target.value});
     }
     getName=(event)=>{
@@ -73,22 +73,22 @@ class AddNew extends React.Component{
         this.checkNameValid()
     }
     getQty=(event)=>{
-        console.log(event.target.value)
+        //console.log(event.target.value)
         this.setState({qty:event.target.value});
     }
     getPrice=(event)=>{
-        console.log(event.target.value)
+        //console.log(event.target.value)
         this.setState({price:event.target.value});
     }
     getCategory=(event)=>{
-        console.log(event.target.value)
+        //console.log(event.target.value)
         this.checkCategory()
         this.setState({cty:event.target.value});
         this.checkCategory()
     }
 
 
-    addNewItem=()=>{
+    addNewItem=async()=>{
         let frndreqbody =  {
             "product_name": this.state.name,
             "id": this.state.id,
@@ -101,14 +101,20 @@ class AddNew extends React.Component{
                 "quantity":this.state.qty
             }
           }
-          if(this.state.nameError===''&&this.state.productimagError==='' ){
+          const product =await axios.get("http://localhost:3000/products?product_name="+this.state.name)
+          //console.log(product.data[0].product_name)
+          if(product.data.length!==0){
+              if(this.state.name.toLowerCase()===product.data[0].product_name.toLowerCase()){
+                  this.setState({nameError:"*Product Already Exist"})
+              }
+          if(this.state.nameError===''&&this.state.productimagError==='' &&this.state.existError==="" ){
           axios.post('http://localhost:3000/products', frndreqbody)
                 .then(response=>{
-                    console.log(response);
+                   // console.log(response);
                     //this.props.history.push('/dashboard')
                     
                 }, error=>{
-                    console.error(error);
+                   // console.error(error);
                 })
                 this.props.history.push('/dashboard')
                // alert("product added Successfully")
@@ -117,11 +123,12 @@ class AddNew extends React.Component{
                 //alert("Enter valid product details")
             }
     }
+}
     getImage=(event)=>{
 
-        console.log(event.target.value);
+       // console.log(event.target.value);
 
-        console.log(event.target.value.substr(12));
+        //console.log(event.target.value.substr(12));
 
         this.checkImageValid()
         this.setState({productimage: event.target.value.substr(12)})
@@ -165,7 +172,8 @@ class AddNew extends React.Component{
                 <br></br>
                 <span style={{display:"inline"}}> 
                     <label>Image: </label><input type="file" onChange={this.getImage} multiple accept='image/*' />
-                    <span style={{color:"red",fontSize:"12px"}}>{this.state.productimagError}</span>
+                    <span style={{color:"red",fontSize:"12px"}}>{this.state.productimagError}</span>&nbsp;
+                    <span style={{color:"red",fontSize:"12px"}}>{this.state.existError}</span>
                 </span> 
                      
                 <br></br>

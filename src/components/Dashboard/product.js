@@ -19,7 +19,7 @@ class Product extends React.Component {
             searchValue:"",
             dropdownCategory:[],
             sorting:false,
-            sortname:'Sort by name'
+            sortname:'Sort'
         };
     }
 
@@ -105,17 +105,17 @@ class Product extends React.Component {
             this.getBlogs()
         }
         this.setState({searchValue: searchV})
-        console.log(searchV);
+        //console.log(searchV);
         let searchF = this.state.productsearch.filter(f=>{
                                 return f.product_name.toLowerCase().match(searchV.toLowerCase().trim())
                             })
-        console.log(searchF);    
+        //console.log(searchF);    
         this.setState({products: searchF}) 
     }
 
 
     renderTable=()=>{
-      console.log(this.state.products);
+      //console.log(this.state.products);
         return (
                 this.state.products.map(product=>{
                     return (  
@@ -132,7 +132,7 @@ class Product extends React.Component {
 
 
     renderCard=()=>{
-        console.log(this.state.products);
+        //console.log(this.state.products);
         return (
             this.state.products.map(product=>{
                 return (
@@ -147,8 +147,8 @@ class Product extends React.Component {
             
             
             sortByname=()=>{
-                console.log("sort function called...")
-                console.log(this.state.products);
+                //console.log("sort function called...")
+                //console.log(this.state.products);
                 const arr = this.state.products;
                 if(this.state.sorting==false){
                 arr.sort((a,b)=>{
@@ -156,14 +156,14 @@ class Product extends React.Component {
                     if(a.product_name.toLowerCase()>b.product_name.toLowerCase()) return 1;
                     if(a.product_name.toLowerCase()==b.product_name.toLowerCase()) return 0;
                 })
-                console.log(arr);
+                //console.log(arr);
                 this.setState({products:arr})
-                this.setState({sortname:"Back to default"})
+                this.setState({sortname:"Default"})
                return this.setState({sorting:true})
             }
             if(this.state.sorting==true){
                 this.getBlogs()
-                this.setState({sortname:"Sort by name"})
+                this.setState({sortname:"Sort"})
                 return this.setState({sorting:false})
             }
             }
@@ -175,16 +175,16 @@ class Product extends React.Component {
             <div>
                 
                 <div className="topnav">
-                <Link to="/dashboard"> Dashboard</Link>
-                <Link to="/stockdetails" >Stock Details</Link>
+                <Link to="/dashboard" style={{background:"white",color:"black"}}> Home</Link>
+                <Link to="/stockdetails" >Dashboard</Link>
                 <Link to="/add-new">Add new item </Link>
                 <Link to="/add-new-category">Add new Category</Link>
                 <label>Filter:</label>
                 <select id="filter" onChange={this.getCategory} >
                             {this.state.dropdownCategory.map(p=><option key={p.id} value={p.category}>{p.category}</option>)}
                 </select>
-                <input type="text" placeholder="Search for product name" name="search" onChange={this.getSearch} />
                 <button onClick={this.sortByname}>{this.state.sortname}</button>
+                <input type="text" placeholder="Search for product name" name="search" onChange={this.getSearch} />
                 </div>
 
                 <br></br>

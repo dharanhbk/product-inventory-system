@@ -18,7 +18,6 @@ class Login extends React.Component{
     login= async() =>{
         console.log('user login clicked.....')
          const data= await Axios.get('http://localhost:3000/register?email='+ this.state.email);
-         console.log(data);
           if(data.data.length !== 0){
              if(this.state.password == data.data[0].password){
                 this.props.history.push("/dashboard")
@@ -29,7 +28,6 @@ class Login extends React.Component{
              }
              else{
                 this.setState({loginError:"*Enter valid details"})
-                console.log("invalid user....")
                 this.props.history.push("/login")
          }
              

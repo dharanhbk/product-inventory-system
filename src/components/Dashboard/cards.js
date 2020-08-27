@@ -30,7 +30,7 @@ constructor(props){
             // </tr>
             <div className="column">
             <div className="card">
-              <img src={"images/" + this.props.prodImage} style={{width:"200px",height:"205px",marginLeft:"200px"}}></img>
+              <img src={"images/" + this.props.prodImage} className="images" style={{width:"200px",height:"205px",marginLeft:"160px"}}></img>
               <div style={{float:"left",marginTop:"-200px"}}>
               <h3>{this.props.name}</h3>
               <p>Quantity: {this.props.quantity}</p>

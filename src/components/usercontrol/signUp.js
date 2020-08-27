@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import Header from "../homepage/header";
-import Modal from 'react-bootstrap/Modal'
+
 
 class SignUp extends React.Component{
 
@@ -79,7 +79,7 @@ class SignUp extends React.Component{
           console.log(emailid)
           if(emailid.data.length!==0){
             if(this.state.email=== emailid.data[0].email){
-              alert("Already have an account")
+              this.setState({emailError:"*Already Exist"})
           }}
             else if(this.state.nameError===''&&this.state.emailError===''&&this.state.passwordError==='' ){
 
@@ -91,12 +91,10 @@ class SignUp extends React.Component{
                     console.error(error);
                 })
                 this.props.history.push('/login')
-                //alert("Succesfully registered")
+                
                 
         }
-        else{
-            //alert("Enter valid details")
-        }
+        
     }
 
     render(){

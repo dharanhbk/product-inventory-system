@@ -41,17 +41,3 @@ it(" check product quantity", () => {
   expect(input.prop("placeholder")).toEqual("Quantity" );
   expect(input).toHaveLength(1)
 });
-it(" check product price", () => {
-  const wrapper = mount(<input type="text" placeholder="Price" />);
-  const input = wrapper.find("input");
-  expect(input.prop("type")).toEqual("text");
-  expect(input.prop("placeholder")).toEqual("Price" );
-  expect(input).toHaveLength(1)
-});
-it(" check Image", () => {
-  const wrapper = mount(<input type="file"  />);
-  const input = wrapper.find("input");
-  expect(input.prop("type")).toEqual("file");
-  expect(input).toHaveLength(1)
-  
-});

@@ -7,8 +7,8 @@ import DashboardHeader from "../homepage/dashboardHeader";
 class Edit extends React.Component{
     constructor(props){
         super(props)
-        console.log(this.props);
-        console.log(this.props.location);
+        //console.log(this.props);
+        //console.log(this.props.location);
        // console.log(this.props.location.state);
         //console.log(this.props.location.state.myid);
         this.state={
@@ -18,14 +18,14 @@ class Edit extends React.Component{
             price:0,
             category:"",
             nameError:"",
-            buttonStatus:false
+            buttonStatus:true
         }
     }
     componentWillMount(){
         if(this.props.location.state !== undefined){
             axios.get('http://localhost:3000/products/'+this.props.location.state.productId)
                 .then(response=>{
-                    console.log(response);
+                    //console.log(response);
                     this.setState({
                         name: response.data.product_name,
                         id:response.data.id,
@@ -35,7 +35,7 @@ class Edit extends React.Component{
                         images:response.data.productimage
                     })
                 }, error=>{
-                    console.error(error);
+                    //console.error(error);
                 })
         }
     }
@@ -57,14 +57,14 @@ class Edit extends React.Component{
         this.setState({id: event.target.value})
     }
     editQty=(event)=>{
-        this.setState({qty: event.target.value})
+        this.setState({qty: event.target.value,buttonStatus:false})
     }
     editCategory=(event)=>{
-        console.log(event.target.value)
-        this.setState({category:event.target.value});
+       // console.log(event.target.value)
+        this.setState({category:event.target.value,buttonStatus:false});
     }
     editPrice=(event)=>{
-        this.setState({price: event.target.value})
+        this.setState({price: event.target.value,buttonStatus:false})
     }
 
     editProduct=()=>{
@@ -82,10 +82,10 @@ class Edit extends React.Component{
 
         axios.put('http://localhost:3000/products/'+this.state.id, friendRequestBody)
                 .then(response=>{
-                    console.log(response);
+                   // console.log(response);
                     this.props.history.push('/dashboard')
                 }, error=>{
-                    console.error(error);
+                   // console.error(error);
                 })
     }
 

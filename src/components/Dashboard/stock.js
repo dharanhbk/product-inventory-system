@@ -34,22 +34,22 @@ class Stock extends React.Component{
         Axios.get('http://localhost:3000/products')
 
                     .then((response)=>{
-                        console.log(response)
-                        console.log(response.data)
+                        //console.log(response)
+                        //console.log(response.data)
                         this.setState({products: response.data})
-                        console.log(this.state.products)
+                       // console.log(this.state.products)
                         var myarray=[]
                         this.state.products.map(p=>{
                             this.state.arr.push([p.product_name,parseInt(p.quantity)]) && myarray.push(p.category);
                         })
                         var unique = myarray.filter((v, i, a) => a.indexOf(v) === i);
                         this.setState({unique:unique})
-                        console.log(unique)
+                        //console.log(unique)
                         this.state.products.map(p=>{
                             let category= p.category
                             let sum =0
                             let productFiltered = this.state.products.filter(prod=>prod.category===category)
-                            console.log(productFiltered)
+                            //console.log(productFiltered)
                             productFiltered.map(pf=>{
                                 sum+=parseInt(pf.quantity)
                             })
@@ -62,7 +62,7 @@ class Stock extends React.Component{
                         })
                     }, 
                     (error)=>{
-                        console.log(error)
+                       // console.log(error)
                         
                     })
                 }
@@ -79,23 +79,12 @@ class Stock extends React.Component{
                 <br></br>
                 <br></br>
                 <div className="topnav">
-                <Link to="/dashboard"> Dashboard</Link>
-                <Link to="/stockdetails" >Stock Details</Link>
+                <Link to="/dashboard">Home</Link>
+                <Link to="/stockdetails" style={{background:"white",color:"black"}}>Dashboard</Link>
                 <Link to="/add-new">Add new item </Link>
                 <Link to="/add-new-category">Add new Category</Link>
                 </div>
-                {/* <Chart
-                    width={'1800px'}
-                    height={'600px'}
-                    chartType="PieChart"
-                    loader={<div>Loading Chart</div>}
-                    data={this.state.arr}
-                    options={{
-                        title: 'Stock Details',
-                        is3D:true
-                    }}
-                    legendToggle
-                /> */}
+                <br></br>
                 <Chart
                     width={'1800px'}
                     height={'600px'}
